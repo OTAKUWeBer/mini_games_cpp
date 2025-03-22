@@ -2,18 +2,19 @@
 CXX = g++
 CXXFLAGS = -std=c++11 -Wall
 
-# Define the bin directory
+# Define source and binary directories
+SRC_DIR = src
 BIN_DIR = bin
 
-# Automatically find all cpp files and generate corresponding executables in bin/
-SOURCES = $(wildcard *.cpp)
-TARGETS = $(patsubst %.cpp, $(BIN_DIR)/%, $(SOURCES))
+# Automatically find all cpp files in the src directory and generate corresponding executables in bin/
+SOURCES = $(wildcard $(SRC_DIR)/*.cpp)
+TARGETS = $(patsubst $(SRC_DIR)/%.cpp, $(BIN_DIR)/%, $(SOURCES))
 
 # Default target: build all executables
 all: $(TARGETS)
 
 # Pattern rule: compile each cpp file into bin/<name>
-$(BIN_DIR)/%: %.cpp
+$(BIN_DIR)/%: $(SRC_DIR)/%.cpp
 	@mkdir -p $(BIN_DIR)
 	$(CXX) $(CXXFLAGS) $< -o $@
 

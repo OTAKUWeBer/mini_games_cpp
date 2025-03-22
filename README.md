@@ -1,7 +1,3 @@
-Below is the updated README file:
-
----
-
 # Mini Games C++ (Learning Project)
 
 This repository is a collection of C++ ports of my Python games from [mini_project_games](https://github.com/OTAKUWeBer/mini_project_games). It serves as a learning platform where I convert, experiment, and enhance my previous projects using C++.
@@ -29,20 +25,20 @@ You can compile your code and run the executables manually using your terminal, 
 #### Manual Compilation Example
 
 ```bash
-g++ -std=c++11 your_game.cpp -o bin/your_game
+g++ -std=c++11 src/your_game.cpp -o bin/your_game
 ./bin/your_game
 ```
 
 #### Using the Makefile
 
-A Makefile is provided to automatically compile **all** `.cpp` files in the directory and place the executables in the `bin` folder.
+A Makefile is provided to automatically compile **all** `.cpp` files in the `src` directory and place the executables in the `bin` folder.
 
 - **Build All Executables:**  
   In your project directory, run:
   ```bash
   make
   ```
-  This command finds all `.cpp` files and compiles each into an executable with the same name (without the `.cpp` extension) in the `bin` folder.
+  This command finds all `.cpp` files in the `src` directory and compiles each into an executable with the same name (without the `.cpp` extension) in the `bin` folder.
 
 - **Run a Specific Game:**  
   To run a specific executable (for example, the game from `pig.cpp`), execute:
@@ -65,9 +61,9 @@ If configured, Code Runner can compile and run your code directly from the edito
 
 ```
 mini_games_cpp/
-├── *.cpp               # C++ source files for your games (e.g., pig.cpp, 1.cpp, etc.)
+├── src/                # C++ source files for your games (e.g., pig.cpp, etc.)
 ├── bin/                # Compiled executables (generated after building)
-├── Makefile            # Build automation script (compiles all .cpp files)
+├── Makefile            # Build automation script (compiles all .cpp files from the src directory)
 ├── README.md           # This file
 └── .gitignore          # Git ignore file for binaries and object files
 ```
